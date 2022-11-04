@@ -4,7 +4,6 @@ import propTypes from 'prop-types'
 function Todo({props}) {
     
 
-    console.log(props)
   return (
     <div>
       {props}

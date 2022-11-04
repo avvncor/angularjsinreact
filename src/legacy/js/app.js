@@ -12,19 +12,19 @@ import TodoList from '../../todoList'
 angular.module('todomvc', ['ngRoute'])
 	.component('reactTodo', react2angular(Todo))
 	.component('reactTodoList', react2angular(TodoList))
-	.config(function ($routeProvider) {
+	.config(["$routeProvider",function ($routeProvider) {
 		'use strict';
 		var routeConfig = {
 			controller: 'TodoCtrl',
 			templateUrl: 'todomvc-index.html',
 			resolve: {
-				store: function (todoStorage) {
+			store: [ "todoStorage", function (todoStorage) {
 					// Get the correct module (API or localStorage).
 					return todoStorage.then(function (module) {
 						module.get(); // Fetch the todo records in the background.
 						return module;
 					});
-				}
+				}]
 			}
 		};
 
@@ -41,4 +41,4 @@ angular.module('todomvc', ['ngRoute'])
 				redirectTo: '/'
 			});
 
-	});
+	}]);

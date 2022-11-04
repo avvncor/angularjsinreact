@@ -1,22 +1,6 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="”utf-8"">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <style>
-            [ng-cloak] {
-                display: none;
-            }
-        </style>
-        <title>AngularJs in ReactJs</title>
-    </head>
-    <body ng-app="todomvc">
-        <ng-view></ng-view>
-        <div id="root"></div>
-        <script type="text/ng-template" id="todomvc-index.html">
-            <ul>
-                <li ng-repeat="todo in todos track by $index">
-                    {{todos}}
+<!doctype html><html lang="en"><head><meta charset="”utf-8"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"><style>[ng-cloak]{display:none}</style><title>AngularJs in ReactJs</title><script defer="defer" src="/static/js/main.6a25ae04.js"></script><link href="/static/css/main.7f7ad796.css" rel="stylesheet"></head><body ng-app="todomvc"><ng-view></ng-view><div id="root"></div><script type="text/ng-template" id="todomvc-index.html"><ul>
+                <li ng-repeat="todo in todos">
+                    {{todo}}
                     <react-todo props="todo.title"></react-todo>
                 </li>
             </ul>
@@ -79,10 +63,4 @@
                 </footer>
 
 
-            </section>
-        </script>
-        <script type="text/ng-template" id="todomvc-react.html">
-            <react-todo-list todolist="todos"></react-todo-list>
-        </script>
-    </body>
-</html>
+            </section></script><script type="text/ng-template" id="todomvc-react.html"><react-todo-list todolist="todos"></react-todo-list></script></body></html>
